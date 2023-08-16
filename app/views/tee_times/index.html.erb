@@ -1,0 +1,16 @@
+<h2><%= @date %></h2>
+<% @teetimes.each do |name, times| %>
+  <h2><%= name.to_s.split("_").map(&:capitalize).join(" ") %></h2>
+  <% times.each do |time| %>
+    <div>
+      Time:<%= time.time %>
+    </div>
+    <div>
+      Spots Avaialble: <%= time.spots_available %>
+    </div>
+    <div>
+      Minimum Players: <%= time.min_players%>
+    </div>
+    <hr />
+  <% end %>
+<% end %>
