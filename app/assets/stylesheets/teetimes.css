@@ -1,0 +1,14 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table.tee-times {
+  width: 100%;
+  margin: 10px;
+}
+
+div.tee-time-tables {
+  display: flex;
+}

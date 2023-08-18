@@ -2,8 +2,8 @@
 <h3>Where and when do you want to play golf?</h3>
 <%= form_with url: tee_times_path, method: :get, local: true do |f| %>
   <div>
-    <%= f.label :date%>
-    <%= f.date_field :date%>
+    <%= f.label :date %>
+    <%= f.date_field :date, value: Date.tomorrow %>
   </div>
   <div>
     <%= f.label :location %>

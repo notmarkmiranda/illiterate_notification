@@ -10,6 +10,7 @@ class LongmontTeeTime
   end
 end
 
+# JSON response from 
 # {"courseId"=>"54f14bf50c8ad60378b01a90",
 #!   "teetime"=>"2023-08-19T19:10:00.000Z",
 #   "backNine"=>false,
