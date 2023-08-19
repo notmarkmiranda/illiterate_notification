@@ -4,16 +4,16 @@
 
 <div class="tee-time-tables">
   <% @courses.each do |course_name, tee_times| %>
-    <table class="tee-times">
+    <table class="tee-times table-auto">
       <thead>
         <tr>
-          <th><%= course_name.to_s.titleize %></th>
+          <th class="px-4 py-2"><%= course_name.to_s.titleize %></th>
         </tr>
       </thead>
       <tbody>
         <% tee_times.each do |tt| %>
           <tr>
-            <td><%= tt.time.strftime("%l:%M %P") %></td>
+            <td class="border px-4 py-2"><%= tt.time.strftime("%l:%M %P") %></td>
           </tr>
         <% end %>
       </tbody>
