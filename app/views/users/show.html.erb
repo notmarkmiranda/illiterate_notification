@@ -1,18 +1,14 @@
 <div style="padding:50px;">
-  <h1>Dashboard</h1>
-  <h3>Where and when do you want to play golf?</h3>
+  <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Dashboard</h1>
+  <h4  class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl dark:text-white">When and where do you want to play golf?</h4>
   <%= form_with url: tee_times_path, method: :get, local: true do |f| %>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :date, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.date_field :date, value: Date.tomorrow %>
-      </div>
+    <div class="mb-4">
+      <%= f.label :date, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+      <%= f.date_field :date, value: Date.tomorrow, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
     </div>
-    <div class="flex flex-wrap -mx-3 mb-6">
-      <div class="w-full px-3">
-        <%= f.label :location, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
-        <%= f.select :location, ["Longmont"], class: "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" %>
-      </div>
+    <div class="mb-4">
+      <%= f.label :location, class: "block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" %>
+      <%= f.select :location, ["Longmont", "Denver (not yet, coming soon)"], {}, {class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"} %>
     </div>
     <%= f.submit "See Tee Times", class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
   <% end %>

@@ -1,4 +1,4 @@
-<%= link_to "Dashboard", dashboard_path %>
+<%= link_to "Dashboard", dashboard_path, class: "font-medium text-blue-600 dark:text-blue-500 hover:underline" %>
 
 <h2>Date: <%= @date %></h2>
 
@@ -7,13 +7,19 @@
     <table class="tee-times table-auto">
       <thead>
         <tr>
-          <th class="px-4 py-2"><%= course_name.to_s.titleize %></th>
+          <th class="px-4 py-2">
+            <%= course_name.to_s.titleize %> - <%= tee_times.count %>
+          </th>
         </tr>
       </thead>
       <tbody>
         <% tee_times.each do |tt| %>
           <tr>
-            <td class="border px-4 py-2"><%= tt.time.strftime("%l:%M %P") %></td>
+            <td class="border px-4 py-2">
+              Time: <%= tt.time.strftime("%l:%M %P") %><br />
+              Spots available: <%= tt.spots_available %><br />
+              Minimum players: <%= tt.min_players %><br />
+            </td>
           </tr>
         <% end %>
       </tbody>
